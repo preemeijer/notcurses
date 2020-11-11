@@ -12,7 +12,7 @@ notcurses_init - initialize a notcurses instance
 
 ```c
 #define NCOPTION_INHIBIT_SETLOCALE   0x0001ull
-#define NCOPTION_VERIFY_SIXEL        0x0002ull
+#define NCOPTION_VERIFY_PIXEL        0x0002ull
 #define NCOPTION_NO_WINCH_SIGHANDLER 0x0004ull
 #define NCOPTION_NO_QUIT_SIGHANDLERS 0x0008ull
 #define NCOPTION_SUPPRESS_BANNERS    0x0020ull
@@ -111,11 +111,11 @@ zero. The following flags are defined:
     the **LANG** environment variable. Your program should call **setlocale(3)**
     itself, usually as one of the first lines.
 
-* **NCOPTION_VERIFY_SIXEL**: Checking for Sixel support requires writing an
-    escape, and then reading an inline reply from the terminal. Since this can
-    interact poorly with actual user input, it's not done unless Sixel will
-    actually be used. Set this flag to unconditionally test for Sixel support
-    in **notcurses_init**.
+* **NCOPTION_VERIFY_PIXEL**: Checking for Sixel/ReGIS/Kitty-based graphics
+    support requires writing an escape, and then reading an inline reply from
+    the terminal. Since this can interact poorly with actual user input, it's
+    not done unless NCBLIT_PIXEL is actually used. Set this flag to
+    unconditionally test for pixel support in **notcurses_init**.
 
 * **NCOPTION_NO_WINCH_SIGHANDLER**: A signal handler will usually be installed
     for **SIGWINCH**, resulting in **NCKEY_RESIZE** events being generated on

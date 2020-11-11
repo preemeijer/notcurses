@@ -82,8 +82,8 @@ pub const NCBLIT_BRAILLE: NcBlitter = crate::ncblitter_e_NCBLIT_BRAILLE;
 /// the blitter is automatically chosen
 pub const NCBLIT_DEFAULT: NcBlitter = crate::ncblitter_e_NCBLIT_DEFAULT;
 
-/// 6 rows, 1 col (RGB), spotty support among terminals
-pub const NCBLIT_SIXEL: NcBlitter = crate::ncblitter_e_NCBLIT_SIXEL;
+/// Not yet supported
+pub const NCBLIT_PIXEL: NcBlitter = crate::ncblitter_e_NCBLIT_PIXEL;
 
 /// How to scale an [`NcVisual`](type.NcVisual.html) during rendering
 ///

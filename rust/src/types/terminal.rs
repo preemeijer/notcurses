@@ -83,13 +83,14 @@ pub const NCOPTION_NO_WINCH_SIGHANDLER: u64 = crate::bindings::NCOPTION_NO_WINCH
 /// info in notcurses_stop(). This inhibits that output.
 pub const NCOPTION_SUPPRESS_BANNERS: u64 = crate::bindings::NCOPTION_SUPPRESS_BANNERS as u64;
 
-/// Test for Sixel support
+/// Test for pixel support
 ///
-/// Checking for Sixel support requires writing an escape, and then reading an
-/// inline reply from the terminal. Since this can interact poorly with actual
-/// user input, it's not done unless Sixel will actually be used. Set this flag
-/// to unconditionally test for Sixel support in notcurses_init().
-pub const NCOPTION_VERIFY_SIXEL: u64 = crate::bindings::NCOPTION_VERIFY_SIXEL as u64;
+/// Checking for Sixel/ReGIS/Kitty-based graphics support requires writing an
+/// escape, and then reading an inline reply from the terminal. Since this can
+/// interact poorly with actual user input, it's not done unless NCBLIT_PIXEL is
+/// actually used. Set this flag to unconditionally test for pixel support in
+/// notcurses_init().
+pub const NCOPTION_VERIFY_PIXEL: u64 = crate::bindings::NCOPTION_VERIFY_PIXEL as u64;
 
 // NcLogLevel ------------------------------------------------------------------
 

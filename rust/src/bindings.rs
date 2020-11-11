@@ -110,7 +110,7 @@ pub(crate) use bindgen::{
     ncblitter_e_NCBLIT_8x1,
     ncblitter_e_NCBLIT_BRAILLE,
     ncblitter_e_NCBLIT_DEFAULT,
-    ncblitter_e_NCBLIT_SIXEL,
+    ncblitter_e_NCBLIT_PIXEL,
 };
 
 // ncbox -----------------------------------------------------------------------
@@ -641,7 +641,7 @@ pub(crate) use bindgen::{
     NCOPTION_NO_QUIT_SIGHANDLERS,
     NCOPTION_NO_WINCH_SIGHANDLER,
     NCOPTION_SUPPRESS_BANNERS,
-    NCOPTION_VERIFY_SIXEL,
+    NCOPTION_VERIFY_PIXEL,
 };
 
 #[doc(inline)]

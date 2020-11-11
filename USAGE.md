@@ -85,11 +85,12 @@ typedef enum {
 // doing something weird (setting a locale not based on LANG).
 #define NCOPTION_INHIBIT_SETLOCALE 0x0001
 
-// Checking for Sixel support requires writing an escape, and then reading an
-// inline reply from the terminal. Since this can interact poorly with actual
-// user input, it's not done unless Sixel will actually be used. Set this flag
-// to unconditionally test for Sixel support in notcurses_init().
-#define NCOPTION_VERIFY_SIXEL        0x0002
+// Checking for Sixel/ReGIS/Kitty-based graphics support requires writing an
+// escape, and then reading an inline reply from the terminal. Since this can
+// interact poorly with actual user input, it's not done unless NCBLIT_PIXEL is
+// actually used. Set this flag to unconditionally test for pixel support in
+// notcurses_init().
+#define NCOPTION_VERIFY_PIXEL        0x0002
 
 // We typically install a signal handler for SIGWINCH that generates a resize
 // event in the notcurses_getc() queue. Set to inhibit this handler.
@@ -2679,7 +2680,7 @@ typedef enum {
   NCBLIT_4x1,     // four vertical levels     █▆▄▂
   NCBLIT_BRAILLE, // 4 rows, 2 cols (braille) ⡀⡄⡆⡇⢀⣀⣄⣆⣇⢠⣠⣤⣦⣧⢰⣰⣴⣶⣷⢸⣸⣼⣾⣿
   NCBLIT_8x1,     // eight vertical levels    █▇▆▅▄▃▂▁
-  NCBLIT_SIXEL,   // 6 rows, 1 col (RGB), spotty support among terminals
+  NCBLIT_PIXEL,   // not yet implemented
 } ncblitter_e;
 
 // Lex a blitter.
